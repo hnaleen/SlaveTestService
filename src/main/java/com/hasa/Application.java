@@ -2,12 +2,14 @@ package com.hasa;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 
 /**
  * - SlaveTestRunner -
  * @author Hasantha Alahakoon
  */
 @SpringBootApplication
+@EnableEurekaClient
 public class Application
 {
   public static void main(String[] args)

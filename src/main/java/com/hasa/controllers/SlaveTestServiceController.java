@@ -1,12 +1,12 @@
 package com.hasa.controllers;
 
 import com.hasa.services.SlaveTestService;
-import org.junit.runner.Result;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
+import se.cambio.qa.multiprocess.testframework.dto.TestCaseResultDTO;
 
 /**
  * - SlaveTestService -
@@ -19,7 +19,7 @@ public class SlaveTestServiceController
   SlaveTestService testService;
 
   @RequestMapping(value = "/{testClass}/{testMethodName}", method = RequestMethod.GET)
-  public Result run(
+  public TestCaseResultDTO run(
       @PathVariable("testClass") String testClass, @PathVariable("testMethodName") String testMethodName)
   {
     System.out.println("Test Class : " + testClass + " Test Method " + testMethodName);
