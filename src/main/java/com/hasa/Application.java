@@ -14,6 +14,9 @@ public class Application
 {
   public static void main(String[] args)
   {
+    String libDirectory = System.getProperty("user.dir") + "\\target\\lib\\*";
+    System.out.println("-+- Setting Test Runner Class path to : " + libDirectory);
+    System.setProperty("processBuilderClassPath", libDirectory);
     SpringApplication.run(Application.class, args);
   }
 }
