@@ -2,7 +2,7 @@ package com.hasa.services;
 
 import com.hasa.services.tests.SlaveTestExecutor;
 import org.springframework.stereotype.Service;
-import se.cambio.qa.multiprocess.testframework.dto.TestCaseResultDTO;
+import se.cambio.test.runner.framework.dto.TestCaseResultDTO;
 
 /**
  * - SlaveTestService -

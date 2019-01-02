@@ -1,8 +1,7 @@
 package com.hasa.services.tests;
 
 import org.testng.xml.XmlSuite;
-import se.cambio.qa.multiprocess.testframework.executor.impl.local.TestNgTestExecutor;
-import se.cambio.qa.multiprocess.testframework.runner.DelegatingTestRunner;
+import se.cambio.test.runner.framework.executor.impl.local.TestNgTestExecutor;
 
 /**
  * - SlaveTestService -

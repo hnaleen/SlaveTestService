@@ -1,11 +1,10 @@
 package com.hasa.services.tests;
 
 import org.testng.ITestResult;
-import se.cambio.qa.multiprocess.testframework.dto.TestCaseResultDTO;
-import se.cambio.qa.multiprocess.testframework.executor.TestExecutor;
-import se.cambio.qa.multiprocess.testframework.executor.impl.remote.NewProcessTestExecutor;
-import se.cambio.qa.multiprocess.testframework.reporter.AFTReporter;
-import se.cambio.qa.multiprocess.testframework.runner.DelegatingTestRunner;
+import se.cambio.test.runner.framework.dto.TestCaseResultDTO;
+import se.cambio.test.runner.framework.executor.TestExecutor;
+import se.cambio.test.runner.framework.executor.impl.remote.NewProcessTestExecutor;
+import se.cambio.test.runner.framework.runner.DelegatingTestRunner;
 
 /**
  * - SlaveTestService -
@@ -20,6 +19,6 @@ public class SlaveTestRunner extends DelegatingTestRunner
 
   @Override protected void handleLogs(TestCaseResultDTO resultDTO, ITestResult testResult)
   {
-    AFTReporter.logs(resultDTO.getLogs(), false);
+//    AFTReporter.logs(resultDTO.getLogs(), false); //TODO Fix logging
   }
 }

@@ -1,3 +1,9 @@
 /.idea
 /target
 /*.iml
+/CTAF_logs
+/lib_working
+/target
+/test-output
+error.log
+info.log

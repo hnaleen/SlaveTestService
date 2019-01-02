@@ -6,20 +6,17 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
-import se.cambio.qa.multiprocess.testframework.dto.TestCaseResultDTO;
+import se.cambio.test.runner.framework.dto.TestCaseResultDTO;
 
 /**
  * - SlaveTestService -
  * @author Hasantha Alahakoon
  */
-@RestController @RequestMapping(value = "/v1/tests")
-public class SlaveTestServiceController
+@RestController @RequestMapping(value = "/v1/tests") public class SlaveTestServiceController
 {
-  @Autowired
-  SlaveTestService testService;
+  @Autowired SlaveTestService testService;
 
-  @RequestMapping(value = "/{testClass}/{testMethodName}", method = RequestMethod.GET)
-  public TestCaseResultDTO run(
+  @RequestMapping(value = "/{testClass}/{testMethodName}", method = RequestMethod.GET, produces = "application/json") public TestCaseResultDTO run(
       @PathVariable("testClass") String testClass, @PathVariable("testMethodName") String testMethodName)
   {
     System.out.println("Test Class : " + testClass + " Test Method " + testMethodName);
