@@ -18,14 +18,15 @@ public class Application
   public static void main(String[] args)
   {
     System.setProperty("java.awt.headless", "false");
+    System.setProperty("headless-mode", "ON");
 
-    String libDirectory = System.getProperty("user.dir") + "\\target\\lib\\*";
+    String libDirectory = System.getProperty("user.dir") + "/target/lib/*";
     System.out.println("-+- Setting Test Runner Class path to : " + libDirectory);
     System.setProperty("processBuilderClassPath", libDirectory);
 
     URL chromeDriverFolder = Application.class.getClassLoader().getResource("drivers");
     String exePath = getExecutableFilePath();
-    String chromeDriverExePath = new File(chromeDriverFolder.getFile()).getAbsolutePath() + "\\" + exePath;
+    String chromeDriverExePath = new File(chromeDriverFolder.getFile()).getAbsolutePath() + "/" + exePath;
     System.out.println("-+- Setting Chrome Driver path to : " + chromeDriverExePath);
     System.setProperty("web_driver_path", chromeDriverExePath);
 
@@ -38,11 +39,11 @@ public class Application
     String path = "";
     if (isWindows())
     {
-      path = "windows\\chromedriver.exe";
+      path = "windows/chromedriver.exe";
     }
     else
     {
-      path = "linux\\chromedriver"; //TODO Check if the path works correctly in linux
+      path = "linux/chromedriver"; //TODO Check if the path works correctly in linux
     }
     return path;
   }
