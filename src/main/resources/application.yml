@@ -8,6 +8,6 @@ eureka:
     registerWithEureka: true
     fetchRegistry: true
     serviceUrl:
-      defaultZone: http://localhost:8761/eureka/
+      defaultZone: http://cllk-hasanthaal:8761/eureka/
 server:
-  port: 8890
+  port: 8899

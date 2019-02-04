@@ -12,13 +12,13 @@ import java.net.URL;
  * @author Hasantha Alahakoon
  */
 @SpringBootApplication
-//@EnableEurekaClient
+@EnableEurekaClient
 public class Application
 {
   public static void main(String[] args)
   {
     System.setProperty("java.awt.headless", "false");
-    System.setProperty("headless-mode", "ON");
+    System.setProperty("headless-mode", "OFF"); //TODO Parameterize this for docker
 
     String libDirectory = System.getProperty("user.dir") + "/target/lib/*";
     System.out.println("-+- Setting Test Runner Class path to : " + libDirectory);
@@ -30,7 +30,7 @@ public class Application
     System.out.println("-+- Setting Chrome Driver path to : " + chromeDriverExePath);
     System.setProperty("web_driver_path", chromeDriverExePath);
 
-    System.setProperty("implicit", "50000");
+    System.setProperty("implicit", "50000"); // TODO Parameterize this
     SpringApplication.run(Application.class, args);
   }
 
@@ -43,7 +43,7 @@ public class Application
     }
     else
     {
-      path = "linux/chromedriver"; //TODO Check if the path works correctly in linux
+      path = "linux/chromedriver";
     }
     return path;
   }
